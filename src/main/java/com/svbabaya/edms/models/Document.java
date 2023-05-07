@@ -18,10 +18,10 @@ public class Document {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
-    private Long templateId;
-    private Long fileId;
+//    private Long templateId;
+//    private Long fileId;
     private Set<Contractor> contractors;
-    private List<DocField> docFields;
+    private List<DocField> completedFields;
     private Boolean removed;
 
 }

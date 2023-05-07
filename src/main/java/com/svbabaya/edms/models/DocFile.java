@@ -1,26 +1,25 @@
 package com.svbabaya.edms.models;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-import java.util.List;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 //@Entity
-public class DocTemplate {
+public class DocFile {
     @Id
     private Long id;
-    private String title;
-    private String version;
-    private LocalDateTime createdAt;
-    private List<DocField> templateFields;
+    private String name;
+    private String store;
+    private Long size;
+    private Mimetype mimetype;
+    private String description;
     private Boolean removed;
-
     @OneToOne (fetch = FetchType.LAZY)
     @MapsId
-    private Document document;
+    Document document;
+
 }
