@@ -1,5 +1,4 @@
 package com.svbabaya.edms.models;
-
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +17,7 @@ public class Document {
     private String number;
     private DocTitle docTitle;
     private LocalDateTime createdAt;
+    private Long templateId;
 
 
 }
