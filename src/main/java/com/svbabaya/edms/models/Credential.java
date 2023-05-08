@@ -7,17 +7,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 //@Entity
-public class DocField {
+public class Credential {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String type;
-    private String placeholder;
-    private String defaultValue;
+    private String text;
+    private String version;
+    private LocalDateTime createdAt;
+    private TypeOfContractor typeOfContractor;
     private Boolean removed;
 }

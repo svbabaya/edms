@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DocumentController {
-    @GetMapping
+    @GetMapping("/")
     public String start() {
         return "hi spring";
     }
