@@ -1,9 +1,6 @@
 package com.svbabaya.edms.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +12,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@Entity
+@Entity
 public class Contractor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +25,12 @@ public class Contractor implements Serializable {
     private String phone;
     private String email;
     private String telegram;
-    private List<Comment> comments;
+
+//    @OneToMany
+//    @JoinColumn (name = "contractor_id")
+//    private List<Comment> comments;
+    @OneToMany
+    @JoinColumn (name = "contractor_id")
     private Set<Document> documents;
     private Boolean removed;
 

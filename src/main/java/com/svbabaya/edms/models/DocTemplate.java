@@ -9,17 +9,18 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@Entity
+@Entity
 public class DocTemplate {
     @Id
     private Long id;
     private String title;
     private String version;
     private LocalDateTime createdAt;
-    private List<DocField> templateFields;
+
+//    private List<DocField> templateFields;
     private Boolean removed;
 
-    @OneToOne (fetch = FetchType.LAZY)
+    @OneToOne (mappedBy = "template", fetch = FetchType.LAZY)
     @MapsId
     private Document document;
 }

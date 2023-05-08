@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@Entity
+@Entity
 public class DocFile {
     @Id
     private Long id;
@@ -18,7 +18,7 @@ public class DocFile {
     private Mimetype mimetype;
     private String description;
     private Boolean removed;
-    @OneToOne (fetch = FetchType.LAZY)
+    @OneToOne (mappedBy = "file", fetch = FetchType.LAZY)
     @MapsId
     Document document;
 
