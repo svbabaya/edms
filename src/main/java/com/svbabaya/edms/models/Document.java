@@ -1,5 +1,6 @@
 package com.svbabaya.edms.models;
 import jakarta.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import lombok.*;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 //@Entity
-public class Document {
+public class Document implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
