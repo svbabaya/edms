@@ -1,6 +1,8 @@
 package com.svbabaya.edms.models;
 
-public enum Mimetype {
+import java.io.Serializable;
+
+public enum Mimetype implements Serializable {
     ZIP,
     PDF,
     WORD,

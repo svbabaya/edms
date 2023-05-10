@@ -1,6 +1,8 @@
 package com.svbabaya.edms.models;
 
-public enum TypeOfContractor {
+import java.io.Serializable;
+
+public enum TypeOfContractor implements Serializable {
     INDIVIDUAL,
     ENTITY
 }

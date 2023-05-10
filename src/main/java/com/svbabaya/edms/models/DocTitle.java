@@ -1,6 +1,8 @@
 package com.svbabaya.edms.models;
 
-public enum DocTitle {
+import java.io.Serializable;
+
+public enum DocTitle implements Serializable {
     CONTRACT,
     AGREEMENT,
     APPLICATION,

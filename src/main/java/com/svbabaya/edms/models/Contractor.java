@@ -25,13 +25,13 @@ public class Contractor implements Serializable {
     private String phone;
     private String email;
     private String telegram;
+    private Boolean removed;
 
-//    @OneToMany
-//    @JoinColumn (name = "contractor_id")
-//    private List<Comment> comments;
     @OneToMany
     @JoinColumn (name = "contractor_id")
+    private List<Comment> comments;
+
+    @ManyToMany
     private Set<Document> documents;
-    private Boolean removed;
 
 }

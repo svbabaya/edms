@@ -19,21 +19,20 @@ public class Document implements Serializable {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
     @OneToOne
-    @JoinColumn (name = "template_id")
     private DocTemplate template;
 
     @OneToOne
-    @JoinColumn (name = "file_id")
     private DocFile file;
-
-    @OneToMany
-    @JoinColumn (name = "document_id")
-    private Set<Contractor> contractors;
 
     @OneToMany
     @JoinColumn (name = "document_id")
     private List<DocField> completedFields;
 
+    @ManyToMany (mappedBy = "documents")
+    private Set<Contractor> contractors;
+
     private Boolean removed;
+
 }
