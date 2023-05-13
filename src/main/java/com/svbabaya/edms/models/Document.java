@@ -33,6 +33,10 @@ public class Document implements Serializable {
     @ManyToMany (mappedBy = "documents")
     private Set<Contractor> contractors;
 
+    @OneToMany
+    @JoinColumn (name = "document_id")
+    private List<DocRelated> docRelatedList;
+
     private Boolean removed;
 
 }
