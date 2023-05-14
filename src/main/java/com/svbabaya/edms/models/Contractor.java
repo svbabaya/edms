@@ -31,7 +31,7 @@ public class Contractor implements Serializable {
     @JoinColumn (name = "contractor_id")
     private List<Comment> comments;
 
-    @ManyToMany
+    @ManyToMany //(mappedBy = "contractors")
     private Set<Document> documents;
 
 }

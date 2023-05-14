@@ -3,7 +3,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -17,7 +16,6 @@ public class Comment implements Serializable {
     private Long id;
     private String text;
     private LocalDateTime createdAt;
-    private Long contractorId;
     private Boolean removed;
     @ManyToOne
     @JoinColumn (name = "comment_id")

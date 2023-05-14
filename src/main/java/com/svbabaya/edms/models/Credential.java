@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@Entity
+@Entity
 public class Credential implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
