@@ -13,10 +13,12 @@ public class DocsService {
 
     @Autowired
     public DocsService(DocRepository docRepository) {
+
         this.docRepository = docRepository;
     }
 
     public List<Document> findAll() {
+
         return docRepository.findAll();
     }
 

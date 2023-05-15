@@ -1,21 +1,19 @@
-package com.svbabaya.edms.models;
+package com.svbabaya.edms.dtos;
 
+import com.svbabaya.edms.models.Comment;
+import com.svbabaya.edms.models.Credential;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-public class Contractor implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Getter
+@Setter
+@Component
+public class ContractorDto {
     private Long id;
     private String firstName;
     private String patronymic;
@@ -24,7 +22,8 @@ public class Contractor implements Serializable {
     private String phone;
     private String email;
     private String telegram;
-    private Boolean removed;
+
+    // Make DTO
 
     @OneToOne
     private Credential credential;
@@ -34,6 +33,6 @@ public class Contractor implements Serializable {
     private List<Comment> comments;
 
     @ManyToMany //(mappedBy = "contractors")
-    private Set<Document> documents;
+    private Set<DocumentDto> documents;
 
 }
