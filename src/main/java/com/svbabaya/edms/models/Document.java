@@ -3,6 +3,9 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import java.util.List;
 import java.util.Set;
 
@@ -16,9 +19,11 @@ public class Document implements Serializable {
     private Long id;
     private String number;
     private DocTitle docTitle;
+    @CreationTimestamp
     private LocalDateTime createdAt;
+    @UpdateTimestamp
     private LocalDateTime updatedAt;
-    private LocalDateTime deletedAt;
+    private Boolean removed;
 
     @OneToOne
     private DocTemplate template;
@@ -36,7 +41,5 @@ public class Document implements Serializable {
     @OneToMany
     @JoinColumn (name = "document_id")
     private List<DocRelated> docRelatedList;
-
-    private Boolean removed;
 
 }
