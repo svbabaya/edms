@@ -1,30 +1,17 @@
 package com.svbabaya.edms.models;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import lombok.*;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
-
+@EqualsAndHashCode(callSuper = false)
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
-public class DocField implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class DocField extends AbstractEntity {
     private String name;
     private String type;
     private String placeholder;
     private String defaultValue;
-    @CreationTimestamp
-    private LocalDateTime createdAt;
-    @UpdateTimestamp
-    private LocalDateTime updatedAt;
-    private Boolean removed;
 
 }

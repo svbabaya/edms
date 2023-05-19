@@ -1,30 +1,17 @@
 package com.svbabaya.edms.models;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
-import java.io.Serializable;
-import java.time.LocalDateTime;
+import lombok.*;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = false)
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
-public class DocTemplate implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class DocTemplate extends AbstractEntity {
     private String title;
     private String version;
-    @CreationTimestamp
-    private LocalDateTime createdAt;
-    @UpdateTimestamp
-    private LocalDateTime updatedAt;
-    private Boolean removed;
 
 //    @OneToOne (mappedBy = "template", fetch = FetchType.LAZY)
 //    @MapsId

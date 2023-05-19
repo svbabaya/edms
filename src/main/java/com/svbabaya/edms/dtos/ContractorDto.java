@@ -1,20 +1,15 @@
 package com.svbabaya.edms.dtos;
 
-import com.svbabaya.edms.models.Comment;
 import com.svbabaya.edms.models.Credential;
-import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.stereotype.Component;
-
-import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
-@Getter
-@Setter
-@Component
-public class ContractorDto {
-    private Long id;
+@EqualsAndHashCode(callSuper = true)
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ContractorDto extends AbstractDto {
     private String firstName;
     private String patronymic;
     private String lastName;
@@ -22,17 +17,8 @@ public class ContractorDto {
     private String phone;
     private String email;
     private String telegram;
-
-    // Make DTO
-
-    @OneToOne
     private Credential credential;
-
-    @OneToMany
-    @JoinColumn (name = "contractor_id")
-    private List<Comment> comments;
-
-    @ManyToMany //(mappedBy = "contractors")
+    private List<CommentDto> comments;
     private Set<DocumentDto> documents;
 
 }

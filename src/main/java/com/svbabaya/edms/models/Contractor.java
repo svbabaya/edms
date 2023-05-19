@@ -1,25 +1,17 @@
 package com.svbabaya.edms.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
-import java.io.Serializable;
-import java.time.LocalDateTime;
+import lombok.*;
 import java.util.List;
 import java.util.Set;
 
+@EqualsAndHashCode(callSuper = false)
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
-public class Contractor implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Contractor extends AbstractEntity {
     private String firstName;
     private String patronymic;
     private String lastName;
@@ -27,11 +19,6 @@ public class Contractor implements Serializable {
     private String phone;
     private String email;
     private String telegram;
-    @CreationTimestamp
-    private LocalDateTime createdAt;
-    @UpdateTimestamp
-    private LocalDateTime updatedAt;
-    private Boolean removed;
 
     @OneToOne
     private Credential credential;
