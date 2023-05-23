@@ -28,13 +28,4 @@ public class AbstractEntity implements Serializable {
     private LocalDateTime updatedAt;
     private boolean removed;
 
-    @Override
-    public String toString() {
-        return "{" +
-                "id=" + id +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                ", removed=" + removed +
-                ", ";
-    }
 }

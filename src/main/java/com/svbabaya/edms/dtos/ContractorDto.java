@@ -17,8 +17,8 @@ public class ContractorDto extends AbstractDto {
     private String phone;
     private String email;
     private String telegram;
-    private Credential credential;
-    private List<CommentDto> comments;
-    private Set<DocumentDto> documents;
+//    private Credential credential;
+//    private List<CommentDto> comments;
+//    private List<DocumentDto> documents;
 
 }

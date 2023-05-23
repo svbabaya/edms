@@ -20,14 +20,14 @@ public class Contractor extends AbstractEntity {
     private String email;
     private String telegram;
 
-    @OneToOne
-    private Credential credential;
-
-    @OneToMany
-    @JoinColumn (name = "contractor_id")
-    private List<Comment> comments;
-
-    @ManyToMany //(mappedBy = "contractors")
-    private Set<Document> documents;
+//    @OneToOne
+//    private Credential credential;
+//
+//    @OneToMany
+//    @JoinColumn (name = "contractor_id")
+//    private List<Comment> comments;
+//
+//    @ManyToMany //(mappedBy = "contractors")
+//    private List<Document> documents;
 
 }

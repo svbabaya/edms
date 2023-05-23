@@ -12,13 +12,14 @@ import java.util.List;
 public class DocTemplate extends AbstractEntity {
     private String title;
     private String version;
+    private DocTitle docTitle;
 
 //    @OneToOne (mappedBy = "template", fetch = FetchType.LAZY)
 //    @MapsId
 //    private Document document;
 
-    @OneToMany
-    @JoinColumn (name = "template_id")
-    private List<DocField> templateFields;
+//    @OneToMany
+//    @JoinColumn (name = "template_id")
+//    private List<DocField> templateFields;
 
 }

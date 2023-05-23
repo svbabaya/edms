@@ -13,31 +13,19 @@ import java.util.Set;
 @Entity
 public class Document extends AbstractEntity {
     private String number;
-    @Enumerated(EnumType.STRING)
     private DocTitle docTitle;
-//
-//    @OneToOne
-//    private DocTemplate template;
-//
-//    @OneToOne
-//    private DocFile file;
-//
-//    @OneToMany
-//    @JoinColumn (name = "document_id")
-//    private List<DocField> completedFields;
-//
-//    @ManyToMany (mappedBy = "documents")
-//    private Set<Contractor> contractors;
+    @OneToOne (cascade = CascadeType.ALL)
+    private DocTemplate template;
+    @OneToOne (cascade = CascadeType.ALL)
+    private DocFile file;
+    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn (name = "document_id")
+    private List<DocField> fields;
+    @OneToMany (/*mappedBy = "documents", */fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Contractor> contractors;
 //
 //    @OneToMany
-//    @JoinColumn (name = "document_id")
+//    @JoinColumn (name = "document_id", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 //    private List<DocRelated> docRelatedList;
 
-    @Override
-    public String toString() {
-        return super.toString() +
-                "number=" + number +
-                ", docTitle=" + docTitle +
-                "}";
-    }
 }
