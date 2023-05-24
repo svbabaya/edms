@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class DocFieldDto extends AbstractDto {
     private String name;
     private String type;
-//    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String placeholder;
     @JsonProperty("default")
     private String defaultValue;

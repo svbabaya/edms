@@ -89,10 +89,10 @@ public class DocSystemApplication {
 					.template(tContract)
 					.file(cFile)
 					.fields(Arrays.asList(fContractHeader, fContractBody, fContractFooter))
-					.contractors(Collections.singletonList(Contractor.builder()
-							.firstName("Tom").patronymic("Jasper").lastName("Cat").country("US")
-							.phone("000-555-000").email("tom@cat.org").telegram("@tomcat")
-							.build()))
+//					.contractors(Collections.singletonList(Contractor.builder()
+//							.firstName("Tom").patronymic("Jasper").lastName("Cat").country("US")
+//							.phone("000-555-000").email("tom@cat.org").telegram("@tomcat")
+//							.build()))
 					.build();
 
 			docService.create(doc);

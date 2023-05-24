@@ -21,11 +21,12 @@ public class Document extends AbstractEntity {
     @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn (name = "document_id")
     private List<DocField> fields;
-    @OneToMany (/*mappedBy = "documents", */fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Contractor> contractors;
-//
-//    @OneToMany
-//    @JoinColumn (name = "document_id", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+
+//    @OneToMany (/*mappedBy = "documents", */fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    private List<Contractor> contractors;
+
+//    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    @JoinColumn (name = "document_id")
 //    private List<DocRelated> docRelatedList;
 
 }
